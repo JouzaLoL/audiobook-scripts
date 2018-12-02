@@ -1,1 +1,1 @@
-youtube-dl --extract-audio --audio-format m4a -o "%(title)s.%(ext)s" "$args[0]"
+youtube-dl -o "./YT Download/%(title)" --extract-audio --audio-format m4a -o "./YT Download/%(playlist_title)s/%(title)s.%(ext)s" "$args[0]"

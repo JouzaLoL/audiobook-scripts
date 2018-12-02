@@ -18,7 +18,6 @@ for($i = 0; $i -lt 64; $i++) {
 
 $timestamps = @'
 Kapitoly:
-
 '@;
 
 $currentTime = New-TimeSpan;

@@ -3,9 +3,9 @@ function Render {
         [string]$Image, [string]$Audio, [string]$Folder
     )
 
-    $Folder = $Folder -replace '\s',''
+    # $Folder = $Folder -replace '\s',''
 
-    $renderCommand = "ffmpeg -y -loop 1 -framerate 1 -i ""$($Image)"" $($Audio) -vf ""pad=ceil(iw/2)*2:ceil(ih/2)*2"" -c:v libx264 -preset veryslow -crf 0 -c:a copy -shortest ""$Folder + '\' + ""rendered.mp4""";
+    $renderCommand = "ffmpeg -y -loop 1 -framerate 1 -i ""$($Image)"" $($Audio) -vf ""pad=ceil(iw/2)*2:ceil(ih/2)*2"" -c:v libx264 -preset veryslow -crf 0 -c:a copy -shortest ""$Folder\rendered.mp4""";
     
     Invoke-Expression $renderCommand;
 }
