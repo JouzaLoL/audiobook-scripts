@@ -40,7 +40,7 @@ foreach ($folder in $folders) {
     #     $alreadyConcat.Delete();
     # }
 
-    $mp3s = Get-ChildItem $folder.FullName -include ('*.mp3', '*.m4a') -recurse | ForEach-Object { $_.FullName };
+    $mp3s = Get-ChildItem $folder.FullName -include ('*.mp3', '*.m4a') -recurse | Where-Object { $_.Name -match '^out.*mp3' } | ForEach-Object { $_.FullName };
     if ($mp3s.Length -gt 1) {
         $mp3s = $mp3s | Sort-Object;
         $mp3s = $mp3s | ForEach-Object { "-i ""$($_)"" "};
