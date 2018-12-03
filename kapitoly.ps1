@@ -10,7 +10,7 @@ for($i = 0; $i -lt 64; $i++) {
 	Where-Object{-not($_.IsFolder)} |
 	ForEach-Object {
 		[PSCustomObject]@{
-			Name = $_.Name
+			Name = $_.Name.Substring(0, $_.Name.Length - 4)
 			Length = [timespan]$com.GetDetailsOf($_, $lengthattribute)
 		}
     }
@@ -18,6 +18,7 @@ for($i = 0; $i -lt 64; $i++) {
 
 $timestamps = @'
 Kapitoly:
+
 '@;
 
 $currentTime = New-TimeSpan;
