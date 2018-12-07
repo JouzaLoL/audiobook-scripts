@@ -10,17 +10,6 @@ function Render {
     Invoke-Expression $renderCommand;
 }
 
-# TODO: Ignore folders without mp3s or jpegs
-
-# Where to put rendered files
-$renderFolder = "./Rendered";
-
-$renderFolderExists = Get-ChildItem -Directory -Filter $renderFolder;
-
-if(!$renderFolderExists.Exists) {
-    New-Item -ItemType Directory -Force -Path $renderFolder;
-}
-
 $folders = Get-ChildItem -Recurse -Directory;
 
 foreach ($folder in $folders) {

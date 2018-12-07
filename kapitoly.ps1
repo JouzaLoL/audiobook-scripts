@@ -29,4 +29,4 @@ foreach ($item in $kapitoly) {
 
 $timestamps > kapitoly.txt
 
-    
+Exit-PSHostProcess
